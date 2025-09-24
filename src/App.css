@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url("./assets/backgroundimage.svg") no-repeat center center;
+  background-size: cover; /* ya contain */
+}
 body,
 html {
   height: 100%;
@@ -14,18 +21,16 @@ html {
 .container {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(
+  /* background: linear-gradient(
     45deg,
     #ff6b6b,
     #4ecdc4,
     #45b7d1,
     #96ceb4,
     #feca57
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-
-  background-image: url("./assets/backgroundimage.svg");
+  ); */
+  /* background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite; */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -34,6 +39,20 @@ html {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  /* max-width: 1500px; */
+}
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes gradientShift {
@@ -181,6 +200,12 @@ html {
     transform: translateY(-10px);
   }
 }
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
 .main-title {
   font-size: clamp(3.5rem, 10vw, 7rem);
@@ -195,6 +220,9 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: absolute;
+  bottom: 150px;
+  white-space: nowrap;
 }
 
 @keyframes titlePulse {
@@ -231,7 +259,7 @@ html {
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 0;
   justify-content: center;
   flex-wrap: wrap;
   animation: fadeInUp 2s ease-out 1s both;
@@ -356,48 +384,96 @@ html {
   letter-spacing: 0.1em;
   opacity: 0.8;
 }
+.button-container {
+  position: fixed;
+  bottom: 40px; /* screen ke bottom se 40px upar */
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-/* Responsive design */
-@media (max-width: 768px) {
+.trigger {
+  font-size: 18px;
+  border-radius: 10px;
+  color: black;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: white;
+  border: none;
+}
+.svg-container {
+  /* background-color: black; */
+  color: black;
+  /* border: 1px solid lime; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
   .main-title {
-    font-size: clamp(2.5rem, 12vw, 5rem);
+    position: absolute;
+    border: 1px solid lime;
+    bottom: 0;
+    font-size: 4rem;
+    bottom: 120px;
   }
 
-  .subtitle {
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    margin-bottom: 2rem;
+  .cta-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .trigger {
+    font-size: 16px;
+    padding: 0.8rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+    bottom: 100px;
+    text-align: center;
   }
 
   .cta-buttons {
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
   }
 
-  .cta-button {
-    width: 250px;
-    padding: 0.8rem 2rem;
+  .trigger {
+    width: 100%;
+    font-size: 16px;
   }
 
-  .stats {
-    gap: 2rem;
-    bottom: 1rem;
-  }
-
-  .stat-number {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    font-size: 2.5rem;
+  .button-container {
+    bottom: 20px;
   }
 }
-
 @media (max-width: 480px) {
-  .stats {
+  .main-title {
+    font-size: 2rem;
+    bottom: 80px;
+  }
+
+  .cta-buttons {
     flex-direction: column;
-    gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .trigger {
+    font-size: 14px;
+    padding: 0.6rem 1rem;
   }
 }
+
+/* Responsive design */
