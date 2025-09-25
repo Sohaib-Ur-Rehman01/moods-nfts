@@ -16,6 +16,7 @@ body {
 .container {
   text-align: center;
   padding: 0 1.5rem;
+  margin-top: 10px;
 }
 
 /* Heading */
@@ -50,7 +51,7 @@ body {
 }
 .main-container {
   display: flex;
-  gap: 40px;
+  gap: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -148,6 +149,20 @@ body {
 
 /* Very small screens */
 @media (max-width: 480px) {
+  .main-container {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+  }
+  .container {
+    text-align: center;
+    padding: 0 1.5rem;
+    /* margin-top: 10px; */
+    /* border: 1px solid lime; */
+  }
   .main-heading {
     font-size: 1.8rem;
   }
