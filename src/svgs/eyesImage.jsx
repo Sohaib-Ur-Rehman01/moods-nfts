@@ -48,7 +48,9 @@
 // export default EyesImage;
 import React from "react";
 
-const EyesImage = ({ leftEyeX, leftEyeY, rightEyeX, rightEyeY }) => {
+const EyesImage = ({ eyePos }) => {
+  const { lx, ly, rx, ry } = eyePos; // destructure positions
+
   return (
     <>
       {/* <svg
@@ -178,14 +180,14 @@ const EyesImage = ({ leftEyeX, leftEyeY, rightEyeX, rightEyeY }) => {
         <ellipse
           rx="12.2549"
           ry="9.4695"
-          transform="translate(186.451488 189.394)"
+          transform={`translate(${186.45 + lx} ${189.39 + ly})`}
           fill="#354a73"
           stroke-width="0"
         />
         <ellipse
           rx="12.2549"
           ry="9.4695"
-          transform="translate(309.354484 189.5)"
+          transform={`translate(${309.35 + rx} ${189.5 + ry})`}
           fill="#354a73"
           stroke-width="0"
         />

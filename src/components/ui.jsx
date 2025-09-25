@@ -3,12 +3,7 @@ import { useState } from "react";
 import EyesImage from "../svgs/eyesImage";
 
 function MainPageUi() {
-  const [eyePos, setEyePos] = useState({
-    lx: 0,
-    ly: 0,
-    rx: 0,
-    ry: 0,
-  });
+  const [eyePos, setEyePos] = useState({ lx: 0, ly: 0, rx: 0, ry: 0 });
 
   const handleMouseMove = (e) => {
     const { innerWidth, innerHeight } = window;
@@ -19,8 +14,7 @@ function MainPageUi() {
     const normX = (mouseX / innerWidth) * 2 - 1;
     const normY = (mouseY / innerHeight) * 2 - 1;
 
-    // scale movement (how far pupils move)
-    const scale = 8;
+    const scale = 8; // how far pupils move
 
     setEyePos({
       lx: normX * scale,
@@ -65,7 +59,10 @@ function MainPageUi() {
 
   return (
     <>
-      <div className="main-container" onMouseMove={handleMouseMove}>
+      <div
+        className="main-container"
+        onMouseMove={handleMouseMove} // attach mouse move here
+      >
         <div className="container">
           {/* Cyberpunk Style Heading */}
           <div className="mb-8">
