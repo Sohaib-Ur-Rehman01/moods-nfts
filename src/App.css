@@ -62,17 +62,16 @@ body {
   align-items: center;
 }
 .img-container svg {
-  max-width: 400px;
+  max-width: 500px;
 }
 /* Stats Grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
-  max-width: 18rem;
-  margin: 0 auto;
   width: 100%;
-  /* max-width: 50px; */
+  max-width: 800px; /* allows cards to expand nicely on large screens */
+  margin: 0 auto; /* center horizontally */
 }
 
 /* Stat Card */
@@ -141,7 +140,7 @@ body {
   }
 
   .img-container svg {
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
     height: auto;
   }
@@ -158,7 +157,7 @@ body {
   }
 
   .img-container svg {
-    max-width: 250px;
+    max-width: 200px;
   }
 }
 

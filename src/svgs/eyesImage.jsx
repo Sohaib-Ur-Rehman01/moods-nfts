@@ -142,7 +142,7 @@ const EyesImage = ({ eyePos }) => {
         shape-rendering="geometricPrecision"
         text-rendering="geometricPrecision"
         preserveAspectRatio="xMidYMid slice"
-        width="70%"
+        width="100%"
         height="100%"
       >
         <defs>
@@ -195,7 +195,7 @@ const EyesImage = ({ eyePos }) => {
           rx="69.0731"
           ry="65.7308"
           transform="matrix(.844694 0 0 0.454582 250 340.246841)"
-          fill="#151515"
+          fill="#18182b"
           stroke-width="0"
         />
         <line
