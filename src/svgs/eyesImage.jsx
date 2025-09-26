@@ -66,8 +66,15 @@ const EyesImage = ({ eyePos }) => {
       >
         <defs>
           <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#191a2e" />
-            <stop offset="25%" stop-color="#18182b" />
+            <stop offset="25%" stop-color="#191b2e" />
+            <stop offset="50%" stop-color="#18182b" />
+            <stop offset="75%" stop-color="#17172B" />
+            <stop offset="100%" stop-color="#17172B" />
+            {/* <stop offset="5%" stop-color="#18192E" /> */}
+            {/* <stop offset="5%" stop-color="#101024" /> */}
+            {/* <stop offset="5%" stop-color="#101024" /> */}
+            {/* <stop offset="0%" stop-color="#16213D" /> */}
+            <stop offset="100%" stop-color="#191A2E" />
           </linearGradient>
         </defs>
 
